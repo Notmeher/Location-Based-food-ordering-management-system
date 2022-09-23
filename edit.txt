@@ -1,0 +1,25 @@
+sql query for foods after line 95
+
+  <?php
+            //SQL Query
+            $sql2 = "SELECT * FROM table_food WHERE active='Yes' AND featured='Yes' LIMIT 6";
+
+            //Execute the Query
+            $res2 = mysqli_query($conn, $sql2);
+
+            //Count Rows
+            $count2 = mysqli_num_rows($res2);
+
+            //food available or not
+            if($count2>0)
+            {
+                //Food Available
+                while($row=mysqli_fetch_assoc($res2))
+                {
+                    //Get all the values
+                    $id = $row['id'];
+                    $title = $row['title'];
+                    $price = $row['price'];
+                    $description = $row['description'];
+                    $image_name = $row['image_name'];
+                ?>
